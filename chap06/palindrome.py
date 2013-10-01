@@ -5,9 +5,7 @@ Author of is_palindrome: you
 
 def first(word):
     """Returns the first character of a word.
-
     word: string
-
     returns: length 1 string
     """
     return word[0]
@@ -15,9 +13,7 @@ def first(word):
 
 def last(word):
     """Returns the first character of a word.
-
     word: string
-
     returns: length 1 string
     """
     return word[-1]
@@ -25,16 +21,19 @@ def last(word):
 
 def middle(word):
     """Returns all but the first and last character of a word.
-
     word: string
-
     returns: string
     """
     return word[1:-1]
 
 
 def is_palindrome(word):
-    """Write a good Docstring here."""
+    """Returns True if after going through function word is a palindrome ."""
+    if len(word) <= 1:
+        return True
+    if first(word) != last(word):
+        return False
+    return is_palindrome(middle(word))
 
-    # TODO: fill in the body of this function
-    return True
+
+print is_palindrome('redivider') 
