@@ -13,25 +13,33 @@ def main():
         word = line.strip()
 
         # only print palindromes
-        if has_no_e(word) and len(word) > 20: 
-            pass #so that it doesn't affect my other functions 
-            #print words
+        return uses_all(word, 'aeiouy')
+    print word
+            
+            
 
 def avoids(word, forbidden):
     return not forbidden in word
 
-#print avoids('hello', 'ap')
+
 
 def uses_only(word, using):
     for letter in word:
-        return not letter not in using
+        if letter not in using:
+            return False
 
-print uses_only('face holey', 'acefhlo')
+        return True
+
+
 
 def uses_all(word, required):
-    return uses_only(required, word)
+    for letter in required:
+        if letter not in word: 
+            return False
 
-#print uses_all('haeli', 'aeiouy') something isn't right about this
+        return True
+
+
 
 if __name__ == '__main__':
     main()

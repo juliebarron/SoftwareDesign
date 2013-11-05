@@ -18,7 +18,7 @@ def polygon(t, n, length):
 		fd(t, length)
 		lt(t, 360.0/n)
 
-#polygon(bob, 7, 72)		
+print polygon(bob, 7, 72)		
 
 def circle(t, r):
 	circumference = 2 * math.pi * r 
@@ -39,7 +39,7 @@ def arc(t, r, angle):
 		fd(t, step_length)
 		lt(t, step_angle)
 
-arc(bob, 50, 180)
+#arc(bob, 50, 180)
 
 wait_for_user()
 
